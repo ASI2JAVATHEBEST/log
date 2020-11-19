@@ -28,7 +28,8 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Event::listen('stomp.*', function ($event, $payload) {
+        Event::listen('*', function ($event, $payload) {
+            Log::info('test');
             Log::info($event, $payload);
         });
     }
